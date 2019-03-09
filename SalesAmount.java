@@ -6,22 +6,23 @@ public class SalesAmount {
 		
 		// start by checking sales with an increment of 100 to save processing time
 		float sales = 0;
-		while ((getCommission(sales) + 5000) < 30000f) {
+		while ((getCommission(sales) + baseSalary) < 30000f) {
 			sales += 100f;
 		}
 		
 		// finish by decrementing by 1 cent to get an exact answer
-		while((getCommission(sales) + 5000) < 30000f) {
+		while((getCommission(sales) + baseSalary) > 30000f) {
 			sales -= 0.01f;
 		}
 		
-		float minimumSales = sales + 0.01f;
+		float minimumSales = sales;
 		System.out.println(minimumSales);
+		System.out.println(getCommission(sales) +baseSalary);
 	}
 
-	private static float getCommission(float sales) {
+	public static float getCommission(float sales) {
 		// return commission based on the following commission chart:
-		// 0.01 - 5,000       : 8 percent
+		// 0.01 - 5,000       : 8  percent
 		// 5,000.01 - 10,0000 : 10 percent
 		// 10,000 +           : 12 percent
 		// this is at a graduated rate.
