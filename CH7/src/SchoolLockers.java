@@ -13,7 +13,7 @@ public class SchoolLockers {
 			// flip lockers that are divisible by locker number
 			for (int j = 0; j < 100; j++) {
 				if (((j+1)%(i)) == 0) {
-					lockers[0] = flipBool(lockers[0]);
+					lockers[j] = !lockers[j];
 				}
 			}
 		}
@@ -22,12 +22,5 @@ public class SchoolLockers {
 		for (int i = 0; i < 100; i++) {
 			System.out.println("locker " + i + " is " + (lockers[i] ? "open" : "closed"));
 		}
-	}
-	
-	public static boolean flipBool (boolean bool) {
-		if (bool == true) {
-			return (false);
-		}
-		return (true);
 	}
 }
