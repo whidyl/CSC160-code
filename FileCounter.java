@@ -16,10 +16,16 @@ public class FileCounter {
 			System.out.println("File not found.");
 		}
 		int numLines = 0;
-		String[] lines = fileScanner.toString().split("\n");
-		for (String line : lines) {
-			System.out.println(lines[numLines]);
-			numLines += 1;
+		String line = "";
+		while(true) {
+			try {
+				line = fileScanner.nextLine();
+				numLines += 1;
+			} catch (NoSuchElementException e){
+				break;
+			}
+			
+			System.out.println(line);
 		}
 		System.out.println(numLines);
 	}
