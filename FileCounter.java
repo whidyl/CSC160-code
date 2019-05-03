@@ -16,8 +16,9 @@ public class FileCounter {
 			System.out.println("File not found.");
 		}
 		int numLines = 0;
-		String[] lines = fileScanner.next().split("\n");
+		String[] lines = fileScanner.toString().split("\n");
 		for (String line : lines) {
+			System.out.println(lines[numLines]);
 			numLines += 1;
 		}
 		System.out.println(numLines);
