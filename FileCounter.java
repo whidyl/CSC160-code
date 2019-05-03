@@ -17,16 +17,17 @@ public class FileCounter {
 		}
 		int numLines = 0;
 		String line = "";
-		while(true) {
-			try {
+		
+		try {
+			while(true) {
 				line = fileScanner.nextLine();
+				System.out.println(line);
 				numLines += 1;
-			} catch (NoSuchElementException e){
-				break;
 			}
+		} catch (NoSuchElementException e){
 			
-			System.out.println(line);
 		}
+	
 		System.out.println(numLines);
 	}
 
